@@ -500,7 +500,7 @@
   function _raw(csvfile) {
     return (
       // csvfile.csv({typed: true})
-      d3.csv("https://devperkins.wpengine.com/wp-content/uploads/2023/07/2023-06-01-county-level-CVI-output-for-DVL_v7.2.csv")
+      d3.csv("https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/2023-06-01-county-level-CVI-output-for-DVL_v7.2.csv?token=GHSAT0AAAAAACFG4B7KRG76OZMSLDNL7RGEZGRL7PA")
     );
   }
 
