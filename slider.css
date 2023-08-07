@@ -1,0 +1,171 @@
+/* Slick slider styles  */
+
+.slick-dots {
+  bottom: -45px;
+}
+
+.slick-dots li button {
+  display: block;
+  padding: 0.3125rem;
+  outline: 0;
+  border: 0;
+  background: 0 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+#slick .slick-dots button {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #cccccc;
+}
+
+#slick .slick-dots li.slick-active button {
+  background-color: #00cc9f;
+}
+
+/* remove default dots */
+#slick .slick-dots button:before {
+  display: none;
+  content: "";
+}
+
+/* Slick arrows  */
+#slick .slick-arrow {
+  z-index: 1000;
+}
+
+#slick .slick-arrow::before {
+  color: white;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+#slick .slick-prev {
+  left: 0px;
+}
+
+#slick .slick-next {
+  right: 0px;
+}
+
+#slick .slick-next:before,
+#slick .slick-prev:before {
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8'%3E%3Cpath d='M13 1.5L11.5 0l-5 4.9-5-4.9L0 1.5 6.5 8z'/%3E%3C/svg%3E")
+    50%/100% no-repeat;
+  position: absolute;
+  top: 50%;
+  width: 19px;
+  height: 12px;
+  opacity: 1;
+  content: "";
+}
+
+#slick .slick-prev::before {
+  left: 48%;
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+#slick .slick-next::before {
+  left: 52%;
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+#slick .slick-next,
+#slick .slick-prev {
+  width: 45px;
+  height: 44px;
+  background-color: #00cc9f;
+}
+
+#slick .slick-dots button,
+#slick .slick-next,
+#slick .slick-prev {
+  outline: 2px solid transparent;
+}
+
+#slick .slick-next:focus,
+#slick .slick-prev:focus,
+#slick .slick-dots button:focus,
+#slick .slick-next:hover,
+#slick .slick-prev:hover,
+#slick .slick-dots button:hover {
+  background-color: #ffb81c;
+  border: 2px solid #000000;
+  cursor: pointer;
+}
+
+/* Not sure if we need this  */
+/* #slick.single:not(.block-editor-block-list__block) .slick-next, #slick.single:not(.block-editor-block-list__block) .slick-prev {
+    -webkit-transform: translateY(-80px);
+    transform: translateY(-80px);
+} */
+
+.cvi-audio-controls {
+  padding-top: 20px;
+}
+
+/* ------------- flexbox styles for a single slide ------------------------------------- */
+.cvi-slide-container {
+  display: flex;
+}
+
+.cvi-slide-text-bg {
+  padding: 10%;
+  color: #ffffff;
+}
+
+.slick-list {
+  height: 600px;
+}
+
+/* audio {
+	width: 301px; 
+} */
+
+@media screen and (min-width: 1024px) {
+  #slick .slick-prev {
+    left: -60px;
+  }
+  #slick .slick-next {
+    right: -60px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .cvi-slide-container {
+    flex-direction: column-reverse;
+  }
+  .slick-list {
+    height: auto;
+  }
+  .slick-dots {
+    bottom: -25px;
+  }
+}
+
+@media (forced-colors: active) {
+  #slick .slick-prev:before,
+  #slick .slick-next:before {
+    position: unset;
+  }
+  #slick .slick-prev:before {
+    content: "←";
+  }
+  #slick .slick-next:before {
+    content: "→";
+  }
+  #slick .slick-dots li.slick-active button {
+    background-color: Highlight;
+  }
+  #slick .slick-next:focus,
+  #slick .slick-prev:focus,
+  #slick .slick-dots button:focus {
+    background-color: Highlight;
+  }
+}
