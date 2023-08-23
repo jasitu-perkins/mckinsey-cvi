@@ -426,7 +426,7 @@ let countyGeoData = new Map();
 Promise.all([
   // geojson files downloaded from https://eric.clst.org/tech/usgeojson/, downloaded in turn from the US Census Bureau
   d3.json(
-    "https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/countyBorders_20m.json?token=GHSAT0AAAAAACFG4B7KWZTHTKYPPNGCUCRGZGRMDOA",
+    "https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/min/countymin.json",
     // "https://raw.githubusercontent.com/kelsey-n/data/main/countyBorders_20m.json",
     // "https://raw.githubusercontent.com/kelsey-n/data/main/countyBorders_20m_centroids.json",
     // "https://raw.githubusercontent.com/kelsey-n/data/main/geoData/us_counties_closest_centroids.json",
@@ -434,13 +434,13 @@ Promise.all([
     d3.autoType
   ),
   d3.json(
-    "https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/stateBorders_20m.json?token=GHSAT0AAAAAACFG4B7KK6G4W27HYUOPCGEUZGRMC7Q",
+    "https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/min/statemin.json",
     //"https://raw.githubusercontent.com/kelsey-n/data/main/stateBorders_20m.json",
     // "https://devperkins.wpengine.com/wp-content/uploads/2023/06/stateBorders_20m.json",
     d3.autoType
   ),
   d3.csv(
-    "https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/2023-06-01-county-level-CVI-output-for-DVL_v7.2.csv?token=GHSAT0AAAAAACFG4B7KRG76OZMSLDNL7RGEZGRL7PA",
+    "https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/2023-06-01-county-level-CVI-output-for-DVL_v7.2.csv",
     // "2023 06 01 county level CVI output for DVL_v7.2.csv",
     function (d) {
       cviData.set(d.county_fips, {
