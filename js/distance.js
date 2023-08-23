@@ -65,6 +65,7 @@ function _cviFilterDistance(Inputs, d3, html) {
   return Inputs.range(d3.extent([50, 500]), {
     value: 50,
     step: 50,
+    id: "oi-3a86ea-3",
     label: html`<span class="sr-only">Show counties on distance map with </span
       >Estimated CVI prevalence (per 100k) of at least:`,
   });
@@ -424,7 +425,7 @@ function _numCounties(html, tableData) {
 function _cviCenter(cviCenters) {
   // return cviCenters.csv({ typed: true });
   return d3.csv(
-    "https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/eye_centers_zip_lat_long_kaggle.csv?token=GHSAT0AAAAAACFG4B7LQX3KB4QCSBMBLIAAZGRMBAA"
+    "https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/eye_centers_zip_lat_long_kaggle.csv"
   );
 }
 
@@ -529,7 +530,7 @@ function _raw(csvfile) {
   return (
     // csvfile.csv({typed: true})
     d3.csv(
-      "https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/2023-06-01-county-level-CVI-output-for-DVL_v7.2.csv?token=GHSAT0AAAAAACFG4B7KRG76OZMSLDNL7RGEZGRL7PA"
+      "https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/2023-06-01-county-level-CVI-output-for-DVL_v7.2.csv"
     )
   );
 }
@@ -564,6 +565,7 @@ function _tableData(filtered, cviFilterDistance) {
         },
       ],
       order: [[2, "desc"]],
+      responsive: true,
     });
   });
   return filtered.filter((d) => d.cvi > cviFilterDistance);
