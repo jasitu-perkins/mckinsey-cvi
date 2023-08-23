@@ -6,7 +6,7 @@
 }
 
 /* Make bullets white */
-li:before {
+#cracks li:before {
   color: white !important;
 }
 ul {
@@ -1241,6 +1241,193 @@ div.dtk-focus-alt table.dataTable tbody td.focus {
   outline-offset: -2px;
 }
 
+/* https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css */
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.child,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.child,
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dataTables_empty {
+    cursor: default !important
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.child:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.child:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dataTables_empty:before {
+    display: none !important
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control {
+    cursor: pointer
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+    margin-right: .5em;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.5);
+    content: "►"
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control.arrow-right::before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control.arrow-right::before {
+    content: "◄"
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th.dtr-control:before {
+    content: "▼"
+}
+
+table.dataTable.dtr-inline.collapsed.compact>tbody>tr>td.dtr-control,
+table.dataTable.dtr-inline.collapsed.compact>tbody>tr>th.dtr-control {
+    padding-left: .333em
+}
+
+table.dataTable.dtr-column>tbody>tr>td.dtr-control,
+table.dataTable.dtr-column>tbody>tr>th.dtr-control,
+table.dataTable.dtr-column>tbody>tr>td.control,
+table.dataTable.dtr-column>tbody>tr>th.control {
+    cursor: pointer
+}
+
+table.dataTable.dtr-column>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr>th.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr>td.control:before,
+table.dataTable.dtr-column>tbody>tr>th.control:before {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.5);
+    content: "►"
+}
+
+table.dataTable.dtr-column>tbody>tr>td.dtr-control.arrow-right::before,
+table.dataTable.dtr-column>tbody>tr>th.dtr-control.arrow-right::before,
+table.dataTable.dtr-column>tbody>tr>td.control.arrow-right::before,
+table.dataTable.dtr-column>tbody>tr>th.control.arrow-right::before {
+    content: "◄"
+}
+
+table.dataTable.dtr-column>tbody>tr.parent td.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr.parent th.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr.parent td.control:before,
+table.dataTable.dtr-column>tbody>tr.parent th.control:before {
+    content: "▼"
+}
+
+table.dataTable>tbody>tr.child {
+    padding: .5em 1em
+}
+
+table.dataTable>tbody>tr.child:hover {
+    background: transparent !important
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details>li {
+    border-bottom: 1px solid #efefef;
+    padding: .5em 0
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details>li:first-child {
+    padding-top: 0
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details>li:last-child {
+    padding-bottom: 0;
+    border-bottom: none
+}
+
+table.dataTable>tbody>tr.child span.dtr-title {
+    display: inline-block;
+    min-width: 75px;
+    font-weight: bold
+}
+
+div.dtr-modal {
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    padding: 10em 1em
+}
+
+div.dtr-modal div.dtr-modal-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: fit-content;
+    max-height: 75%;
+    overflow: auto;
+    margin: auto;
+    z-index: 102;
+    overflow: auto;
+    background-color: #f5f5f7;
+    border: 1px solid black;
+    border-radius: .5em;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6)
+}
+
+div.dtr-modal div.dtr-modal-content {
+    position: relative;
+    padding: 2.5em
+}
+
+div.dtr-modal div.dtr-modal-content h2 {
+    margin-top: 0
+}
+
+div.dtr-modal div.dtr-modal-close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 12
+}
+
+div.dtr-modal div.dtr-modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    background: rgba(0, 0, 0, 0.6)
+}
+
+@media screen and (max-width: 767px) {
+    div.dtr-modal div.dtr-modal-display {
+        width: 95%
+    }
+}
+
+html.dark table.dataTable>tbody>tr>td.dtr-control:before {
+    color: rgba(255, 255, 255, 0.5) !important
+}
+
+html.dark table.dataTable>tbody>tr.child ul.dtr-details>li {
+    border-bottom-color: rgb(64, 67, 70)
+}
+
+html.dark div.dtr-modal div.dtr-modal-display {
+    background-color: rgb(33, 37, 41);
+    border: 1px solid rgba(255, 255, 255, 0.15)
+}
+
 /* Trivariate map styles */
 
 .tooltip-bivariate-map,
@@ -1365,6 +1552,7 @@ form.oi-66c06c {
   align-items: center;
   gap: 14px;
   font-size: 14px;
+  flex-wrap: wrap;
 }
 
 .cvi-modal-link:hover {
@@ -1377,7 +1565,7 @@ form.oi-66c06c {
 }
 
 th:focus {
-  border: #00cc9f solid 3px;
+  outline: #00cc9f solid 3px;
 }
 
 .paginate_button:focus {
@@ -1411,6 +1599,20 @@ th:focus {
 }
 
 /* Data table mobile fixes */
+
+@media screen and (max-width: 600px) {
+  #data-table thead, #data-table-trivariate-distance thead, #data-table-trivariate-access thead, #data-table-trivariate thead {
+    display: table-header-group;
+  }
+
+  tbody td, tbody td:before {
+    text-align: unset;
+  }
+
+  #data-table li:before, #data-table-trivariate-distance li:before, #data-table-trivariate-access li:before, #data-table-trivariate li:before {
+    content: none;
+  }
+}
   
 #data-table td, #data-table-trivariate-distance td, #data-table-trivariate-access td, #data-table-trivariate td  {
   display: table-cell;
@@ -1436,6 +1638,142 @@ th:focus {
       -o-object-fit: cover;
       object-fit: cover;
   }
+
+/* tabbed content */
+
+.tabbed-content .tab-bar .tabs {
+  justify-content: center;
+}
+
+.tabbed-content .tab-bar .tabs button {
+  font-size: 1.5rem;
+}
+
+.tabbed-content .tabs [role=tab][aria-selected=true] {
+    box-shadow: -2px -10px 8px 0 rgba(0,0,.13,.13);
+}
+
+@media (max-width: 320px) {
+  .observable-flex-child-1 {
+      width: 300px;
+  }
+  #observablehq-noDataLegendDistance-c797d0e6 div,
+  #observablehq-noDataLegendAccess-66c14cf9 div,
+  #observablehq-noDataLegend-2efbcca2 div {
+      gap: 25px !important;
+  }
+}
+
+/* accordion styles */
+
+.accordion-card .contents {
+    padding: 0;
+}
+
+/* audio controls */
+
+@media (max-width: 375px) {
+    audio {
+        width: 250px;
+      }
+}
+
+@media (max-width: 320px) {
+    audio {
+        width: 215px;
+      }
+    }
+
+
+/* slick carousel slide */
+
+.slide-carousel {
+  padding: 20px 0px;
+}
+
+.tina {
+  background: #ffb81c;
+  color: #000000;
+}
+
+.omer {
+  background: #153867;
+}
+
+.aidan {
+  background: #06a6ea;
+  color: #000000;
+}
+
+.micah {
+  background: #E0004D;
+}
+
+.kyle {
+  background: #00cc9f;
+  color: #000000;
+}
+
+.zeke {
+  background: #9a1da0;
+}
+
+.slick-dots {
+  margin-bottom: -10px;
+}
+
+.cvi-slide-text-bg h4 {
+  margin-top: 0;
+}
+
+@media (max-width: 425px) {
+  .slick-arrow {
+      top: 40%;
+  }
+}
+
+@media (max-width: 320px) {
+   .slick-arrow {
+       top: 35%;
+   }
+}
+
+/* hero-title block */
+
+.hero-title h2 {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .hero-title h2 {
+    font-size: 2.25rem;
+  }
+}
+
+/* FAQ Feed */
+
+.layout-faqs .faq-item .content {
+  padding-right: 0;
+}
+
+.layout-faqs .faq-item .content h4 {
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+.tab-content .faq-feed {
+  margin-top: 1.25em;
+}
+
+/* animation toggle */
+
+.animation-toggle-container {
+  flex-wrap: wrap;
+}
+
+.animation-toggle-container .toggle-container {
+  padding-bottom: 1em;
+}
 
 /* Header styles */
 
