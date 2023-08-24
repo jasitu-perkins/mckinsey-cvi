@@ -853,18 +853,29 @@ Promise.all([
   // convert to DataTable
   $(document).ready(function () {
     let table = $("#data-table").DataTable({
-      columns: [
-        { data: "county", title: "County" },
-        { data: "stateFull", title: "State" },
-        {
-          data: "combined",
-          title: "Estimated CVI prevalence (per 100k)",
-          className: "align-right",
-        },
-      ],
-      order: [[2, "desc"]],
-    });
-  });
+       columns: [
+         { data: "county", title: "County" },
+         { data: "stateFull", title: "State" },
+         {
+           data: "combined",
+           title: "Estimated CVI prevalence (per 100k)",
+           className: "align-right",
+         },
+       ],
+       order: [[2, "desc"]],
+       responsive: true,
+       drawCallback: function(){ // running code after table draw
+         let paginationLinks = document.querySelectorAll('.paginate_button');
+ 
+         paginationLinks.forEach(function(link) {
+           if (link.hasAttribute('aria-role')) {
+             link.removeAttribute('aria-role');
+             link.setAttribute('role', 'link');
+           }
+         });
+       }
+    }); 
+ });
 });
 // HANDLE SCROLLYTELLING ANIMATION
 
