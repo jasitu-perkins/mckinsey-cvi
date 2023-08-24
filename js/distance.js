@@ -1,3 +1,4 @@
+<script type="module">
 import {
   Runtime,
   Inspector,
@@ -542,14 +543,13 @@ function _filtered(wrangleData, raw) {
   }));
 }
 
+let table;
 let filteredDataDistance;
-function _tableData(filtered, cviFilterDistance) {
-  filteredDataDistance = filtered.filter((d) => d.cvi > cviFilterDistance);
-  // convert to DataTable
-  $(document).ready(function () {
-    let table = $("#data-table-trivariate-distance").DataTable({
+
+$(document).ready(function () {
+    // Initialize DataTable
+    table = $("#data-table-trivariate-distance").DataTable({
       destroy: true,
-      data: Array.from(filteredDataDistance.values()),
       columns: [
         { data: "name", title: "County" },
         { data: "stateFull", title: "State" },
@@ -567,9 +567,28 @@ function _tableData(filtered, cviFilterDistance) {
       order: [[2, "desc"]],
       responsive: true,
     });
-  });
+
+    $('#toggle-table-trivariate-distance').change(function () {
+        if(this.checked) {
+            $('#data-table-trivariate-wrapper-distance').css('height', 'auto');
+            table.columns.adjust().responsive.recalc();
+        } else {
+            $('#data-table-trivariate-wrapper-distance').css('height', '0');
+        }
+    });   
+});
+
+function _tableData(filtered, cviFilterDistance) {
+  filteredDataDistance = filtered.filter((d) => d.cvi > cviFilterDistance);
+  
+  // Populate DataTable with preloaded data
+  table.clear();
+  table.rows.add(Array.from(filteredDataDistance.values()));
+  table.draw();
+
   return filtered.filter((d) => d.cvi > cviFilterDistance);
 }
+
 
 function _35(d3, filtered) {
   return d3
@@ -874,3 +893,4 @@ new Runtime().module(define, (name) => {
     "color",
   ].includes(name);
 });
+</script>
