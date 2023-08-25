@@ -574,6 +574,9 @@ $(document).ready(function () {
             link.setAttribute('role', 'link');
           }
         });
+      },
+      initComplete: function() {
+       $(this.api().table().container()).find('input').attr('autocomplete', 'off');
       }
     });
     // Recalculates responsive datatable once toggle button triggered
