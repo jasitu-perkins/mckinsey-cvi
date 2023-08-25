@@ -512,36 +512,64 @@
     }));
   }
 
+  let table;
   let filteredDataAccess;
-  function _tableData(filtered, cviFilterAccess) {
-    filteredDataAccess = filtered.filter((d) => d.cvi > cviFilterAccess);
-    // convert to DataTable
-    $(document).ready(function () {
-      let table = $("#data-table-trivariate-access").DataTable({
-        destroy: true,
-        data: Array.from(filteredDataAccess.values()),
-        columns: [
-          { data: "name", title: "County" },
-          { data: "stateFull", title: "State" },
-          {
-            data: "cvi",
-            title: "Estimated CVI prevalence (per 100k)",
-            className: "align-right",
-          },
-          {
-            data: "physicians",
-            title: "Physicians per 100k",
-            className: "align-right",
-          },
-          {
-            data: "uninsured",
-            title: "Uninsured rate",
-            className: "align-right",
-          },
-        ],
-        order: [[2, "desc"]],
-      });
+
+  $(document).ready(function () {
+    // Initialize DataTable
+    table = $("#data-table-trivariate-access").DataTable({
+      destroy: true,
+      columns: [
+        { data: "name", title: "County" },
+        { data: "stateFull", title: "State" },
+        {
+          data: "cvi",
+          title: "Estimated CVI prevalence (per 100k)",
+          className: "align-right",
+        },
+        {
+          data: "physicians",
+          title: "Physicians per 100k",
+          className: "align-right",
+        },
+        {
+          data: "uninsured",
+          title: "Uninsured rate",
+          className: "align-right",
+        },
+      ],
+      order: [[2, "desc"]],
+      responsive: true,
+      drawCallback: function(){ // running code after table draw
+        let paginationLinks = document.querySelectorAll('.paginate_button');
+
+        paginationLinks.forEach(function(link) {
+          if (link.hasAttribute('aria-role')) {
+            link.removeAttribute('aria-role');
+            link.setAttribute('role', 'link');
+          }
+        });
+      }
     });
+    // Recalculates responsive datatable once toggle button triggered
+    $('#toggle-table-trivariate-access').change(function () {
+        if(this.checked) {
+            $('#data-table-trivariate-wrapper-access').css('height', 'auto');
+            table.columns.adjust().responsive.recalc();
+        } else {
+            $('#data-table-trivariate-wrapper-access').css('height', '0');
+        }
+    });   
+});
+
+  function _tableData(filtered, cviFilterAccess) {
+  filteredDataAccess = filtered.filter((d) => d.cvi > cviFilterAccess);
+
+    // Populate DataTable with preloaded data
+    table.clear();
+    table.rows.add(Array.from(filteredDataAccess.values()));
+    table.draw();
+  
     return filtered.filter((d) => d.cvi > cviFilterAccess);
   }
 

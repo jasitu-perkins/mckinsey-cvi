@@ -1,4 +1,3 @@
-<script type="module">
 import {
   Runtime,
   Inspector,
@@ -566,8 +565,18 @@ $(document).ready(function () {
       ],
       order: [[2, "desc"]],
       responsive: true,
-    });
+      drawCallback: function(){ // running code after table draw
+        let paginationLinks = document.querySelectorAll('.paginate_button');
 
+        paginationLinks.forEach(function(link) {
+          if (link.hasAttribute('aria-role')) {
+            link.removeAttribute('aria-role');
+            link.setAttribute('role', 'link');
+          }
+        });
+      }
+    });
+    // Recalculates responsive datatable once toggle button triggered
     $('#toggle-table-trivariate-distance').change(function () {
         if(this.checked) {
             $('#data-table-trivariate-wrapper-distance').css('height', 'auto');
@@ -893,4 +902,3 @@ new Runtime().module(define, (name) => {
     "color",
   ].includes(name);
 });
-</script>
