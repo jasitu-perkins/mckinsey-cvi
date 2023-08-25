@@ -49,14 +49,31 @@
   }
 
   function _cviFilter(Inputs, d3, html) {
-    return Inputs.range(d3.extent([50, 500]), {
+    const range = Inputs.range(d3.extent([50, 500]), {
       value: 150,
       step: 50,
-      label: html`<span class="sr-only"
-          >Show counties on social risk map with </span
+      label: html`<span class="sr-only">Show counties on access map with </span
         >Estimated CVI prevalence (per 100k) of at least:`,
     });
-  }
+
+    // Create a unique id for the range input
+    const rangeId = 'range-input-3';
+    const rangeInput = range.querySelector('input[type="range"]');
+    rangeInput.id = rangeId;
+
+    // Create a new label element
+    const rangeLabel = document.createElement('label');
+
+    // Set the 'for' attribute to match the id of the range input and add screen-reader-only class
+    rangeLabel.setAttribute('for', rangeId);
+    rangeLabel.setAttribute('class', 'sr-only');
+    rangeLabel.innerText = 'Slider value to display counties on map with Estimated CVI prevalence (per 100k)';
+
+    // Insert the new label after the number input and before the range input
+    range.querySelector('.oi-3a86ea-input').insertBefore(rangeLabel, rangeInput);
+
+    return range;
+}
 
   function _legendTitle(html) {
     return html`<svg
