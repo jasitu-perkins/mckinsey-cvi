@@ -1506,7 +1506,7 @@ form.oi-66c06c > label {
 #observablehq-viewof-cviFilter-2efbcca2 > form > label,
 #observablehq-viewof-cviFilterAccess-66c14cf9 > form > label,
 #observablehq-viewof-cviFilterDistance-c797d0e6 > form > label {
-  pointer-events: none;
+  pointer-events: inherit;
 }
 
 form.oi-66c06c {
@@ -1598,7 +1598,7 @@ th:focus {
   }
 }
 
-/* Data table mobile fixes */
+/* Data table fixes */
 
 @media screen and (max-width: 600px) {
   #data-table thead, #data-table-trivariate-distance thead, #data-table-trivariate-access thead, #data-table-trivariate thead {
@@ -1623,6 +1623,13 @@ th:focus {
 .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_length {
     margin: 0.5em 0;
   }
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
 }
 
 /* svg image fix */
@@ -1686,6 +1693,20 @@ th:focus {
 
 
 /* slick carousel slide */
+
+.slick-active:nth-child(odd):focus {
+  outline: #FFFFFF 5px solid;
+  outline-offset: -10px;
+}
+
+.slick-active:nth-child(even):focus {
+  outline: #000000 5px solid;
+  outline-offset: -10px;
+}
+
+#slick .slick-next, #slick .slick-prev {
+  outline: 2px solid #000000;
+}
 
 .slide-carousel {
   padding: 20px 0px;
@@ -1773,6 +1794,12 @@ th:focus {
 
 .animation-toggle-container .toggle-container {
   padding-bottom: 1em;
+}
+
+/* misc */
+
+a:focus {
+  outline: 2px solid #1D4F91;
 }
 
 /* Header styles */
