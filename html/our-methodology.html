@@ -1,16 +1,49 @@
 <div class="faq-feed faqs-page-wrapper alignwide">
 	<div class="layout-faqs">
 		<div class="layout-faqs-wrapper">
-				<div class="faq-item">
-					<h3><button class="title" id="our-methodology" aria-controls="our-methodology" aria-expanded="false">Our methodology<span class="faq-icon-plus"></span></button></h3>
-					<div class="content core" id="our-methodology" role="region" style="display: none;" hidden>
-						<p>These data draw on multiple sources, including a claims-based analysis performed by McKinsey & Company using Komodo Health insurance claims data and social determinants of health data from McKinsey & Company’s Health Institute. Perkins School for the Blind is responsible for the conclusions and recommendations of the research. Data included open and closed claims from patients 0-22 years old at the time of their first medical claim during the period 2016-2022. Because there is not a single defined ICD-10 diagnosis code for CVI, we identified patients with diagnosed CVI using the following criteria: at least one ICD-10 code for disorders of visual cortex (e.g., cortical blindness) and at least one ICD-10 code for another visual disorder. In addition to identifying patients with diagnosed CVI, we built and applied a machine learning model to also identify patients with probable undiagnosed or likely CVI.</p>
+			<div class="faq-item">
+				<h3><button class="title" id="our-methodology" aria-controls="our-methodology" aria-expanded="false">Our
+						methodology<span class="faq-icon-plus"></span></button></h3>
+				<div class="content core" id="our-methodology" role="region" style="display: none;" hidden>
+					<p>These data draw on multiple sources, including a claims-based analysis performed by McKinsey &
+						Company using Komodo Health insurance claims data and social determinants of health data from
+						McKinsey & Company’s Health Institute. Perkins School for the Blind is responsible for the
+						conclusions and recommendations of the research. Data included open and closed claims from
+						patients 0-22 years old at the time of their first medical claim during the period 2016-2022.
+						Because there is not a single defined ICD-10 diagnosis code for CVI, we identified patients with
+						diagnosed CVI using the following criteria: at least one ICD-10 code for disorders of visual
+						cortex (e.g., cortical blindness) and at least one ICD-10 code for another visual disorder. In
+						addition to identifying patients with diagnosed CVI, we built and applied a machine learning
+						model to also identify patients with probable undiagnosed or likely CVI.</p>
 
-						<p>The machine learning model was trained on patients with diagnosed CVI (‘true positives’) and on patients identified not to have CVI (‘true negatives’). We classified patients as ‘true negatives’ based on absence of certain diagnoses and patterns of care, for example, visits with a pediatric neurologist and ophthalmologist in conjunction with absence of diagnosis of disorder of visual cortex. The model used patient ICD-10 diagnosis information, specialist visits, imaging procedures, age, geographic location, and state-level social determinants of health data to predict whether patients were likely to have CVI or not. The model performed well in terms of overall accuracy (79% F1 score) and had strong specificity (99%) but lower sensitivity (71%), meaning the model was unlikely to classify someone as having CVI who did not, but may miss cases of CVI. A relatively conservative prediction model aligned with the goal of confidence in predicted cases of CVI. By examining both patients with diagnosed CVI and patients with likely CVI in claims data, we can more comprehensively explore the total burden of disease and associated factors.</p>
-						
-						<p>Several limitations warrant consideration in our analysis. Firstly, we utilized a combination of open and closed medical claims records. Closed claims include the complete medical billing data from a specific payer, whereas open claims derive from various sources and may not encompass all billing data for a patient. Consequently, while open claims enable us to include a larger number of patients in our analyses, we may not have access to all their medical billing data or diagnoses. Moreover, our model is unlikely to account for children lacking health insurance or those primarily receiving school-based care, potentially leading to an underestimation of the burden impact of CVI within these populations. Additionally, our approach is inclined to generate conservative estimates due to the machine learning model being trained on more severe cases of CVI. Lastly, data privacy restrictions prevent us from observing perinatal and related codes in the dataset, thus hindering our ability to observe premature birth or perinatal injuries.</p>
-					</div>
+					<p>The machine learning model was trained on patients with diagnosed CVI (‘true positives’) and on
+						patients identified not to have CVI (‘true negatives’). We classified patients as ‘true
+						negatives’ based on absence of certain diagnoses and patterns of care, for example, visits with
+						a pediatric neurologist and ophthalmologist in conjunction with absence of diagnosis of disorder
+						of visual cortex. The model used patient ICD-10 diagnosis information, specialist visits,
+						imaging procedures, age, geographic location, and state-level social determinants of health data
+						to predict whether patients were likely to have CVI or not. The model performed well in terms of
+						overall accuracy (79% F1 score) and had strong specificity (99%) but lower sensitivity (71%),
+						meaning the model was unlikely to classify someone as having CVI who did not, but may miss cases
+						of CVI. A relatively conservative prediction model aligned with the goal of confidence in
+						predicted cases of CVI. By examining both patients with diagnosed CVI and patients with likely
+						CVI in claims data, we can more comprehensively explore the total burden of disease and
+						associated factors.</p>
+
+					<p>Several limitations warrant consideration in our analysis. Firstly, we utilized a combination of
+						open and closed medical claims records. Closed claims include the complete medical billing data
+						from a specific payer, whereas open claims derive from various sources and may not encompass all
+						billing data for a patient. Consequently, while open claims enable us to include a larger number
+						of patients in our analyses, we may not have access to all their medical billing data or
+						diagnoses. Moreover, our model is unlikely to account for children lacking health insurance or
+						those primarily receiving school-based care, potentially leading to an underestimation of the
+						burden impact of CVI within these populations. Additionally, our approach is inclined to
+						generate conservative estimates due to the machine learning model being trained on more severe
+						cases of CVI. Lastly, data privacy restrictions prevent us from observing perinatal and related
+						codes in the dataset, thus hindering our ability to observe premature birth or perinatal
+						injuries.</p>
 				</div>
+			</div>
 		</div>
 	</div>
 </div>
