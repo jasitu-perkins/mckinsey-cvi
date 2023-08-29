@@ -59,7 +59,7 @@ $("#slick").on("init", function () {
   document.querySelectorAll("audio").forEach((el) => (el.tabIndex = "-1"));
   document.querySelector(`#audio-${0}`).tabIndex = "0";
 });
-
+// Imported from HTML page
 $("#slick").on("afterChange", function () {
   const transcripts = [
   "“My vision is very unpredictable. It likes to do what it wants. It gets frustrating because I want to be able to see things, I want to be able to participate in things, but sometimes it’s hard for me because my vision just completely goes at the wrong time! For me, my vision can go from probably visually impaired to only seeing movement, light, shadows, and color... I guess kinda like Monet paintings. Very distorted. I wish people understood more that our brains decide when it wants to work, visually, and when it wants to “peace out”, I’m done for the day.”", 
@@ -82,3 +82,10 @@ $("#slick").on("afterChange", function () {
   document.querySelector('#cvi-audio-transcript').innerHTML = transcripts[dataId]
   document.querySelector('#cvi-audio-transcript-header').innerHTML = transcriptTitles[dataId]
 });
+
+// Multi map tabbed content with attributes
+var divs = document.querySelectorAll(".tabbed-content");
+for(var i = 0; i < divs.length; i++) {
+    divs[i].setAttribute("role", "region");
+    divs[i].setAttribute("aria-label", "Geographic analysis of CVI diagnosis and support");
+}
