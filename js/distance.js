@@ -1,10 +1,10 @@
 import {
   Runtime,
   Inspector,
-} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+} from "/wp-content/uploads/dataviz/mckinsey-cvi/js/runtime.js";
 // import define from "https://api.observablehq.com/d/39a654e98e6c2f64@1788.js?v=3";
 
-import define1 from "https://api.observablehq.com/d/a33468b95d0b15b0@808.js?v=3&resolutions=39a654e98e6c2f64@1788";
+import define1 from "/wp-content/uploads/dataviz/mckinsey-cvi/js/colorlegend.js";
 
 // TO DELETE!!!!
 function toggleTable(enable, tableSelector) {
@@ -714,7 +714,7 @@ function define(runtime, observer) {
     [
       "counties-albers-10m.json",
       {
-        url: "https://static.observableusercontent.com/files/6b1776f5a0a0e76e6428805c0074a8f262e3f34b1b50944da27903e014b409958dc29b03a1c9cc331949d6a2a404c19dfd0d9d36d9c32274e6ffbc07c11350ee",
+        url: "https://raw.githubusercontent.com/jasitu-perkins/mckinsey-cvi/main/data/counties-albers-10m.json",
         mimeType: "application/json",
         toString,
       },
