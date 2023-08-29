@@ -1,11 +1,12 @@
 <div class="toggle-container">
   <label for="toggle-table" class="toggle-label">
     <strong>Show data table</strong>
-    <span class="sr-only">for CVI prevalence</span></label>
-  <label class="switch">
-    <input type="checkbox" id="toggle-table" autocomplete="off" />
-    <span class="slider round animation-slider"></span>
-    <span class="cher-link-text">Table toggle</span>
+    <span class="sr-only">for CVI prevalence</span>
+    <div class="switch">
+      <input type="checkbox" id="toggle-table" autocomplete="off" />
+      <span class="slider round animation-slider"></span>
+      <span class="cher-link-text">Table toggle</span>
+    </div>
   </label>
 </div>
-<section id="data-table-container" style="height: 0; overflow: hidden;"></section>
+<section id="data-table-container" style="display: none; overflow-x: auto;"></section>
