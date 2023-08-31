@@ -1763,10 +1763,10 @@ th:focus {
   }
 }
 
-/* accordion styles */
+/* faq feed styles */
 
-.accordion-card .contents {
-    padding: 0;
+#distance-guide strong, #access-guide strong, #social-guide strong {
+    font-weight: bold;
 }
 
 /* audio controls */
