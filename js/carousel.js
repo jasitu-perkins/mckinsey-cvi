@@ -89,3 +89,17 @@ for(var i = 0; i < divs.length; i++) {
     divs[i].setAttribute("role", "region");
     divs[i].setAttribute("aria-label", "Geographic analysis of CVI diagnosis and support");
 }
+
+// Initialize tabindex on multi map tabs
+window.addEventListener("DOMContentLoaded", () => {
+  let tabElements = document.querySelectorAll('div[aria-label="CVI Maps"] button[role="tab"]');
+  tabElements.forEach(tab => {
+    if (tab.getAttribute('aria-selected') === "true") {
+      // Set tabindex to 0 for selected tab
+      tab.tabIndex = 0;
+    } else {
+      // Set tabindex to -1 for all other tabs
+      tab.tabIndex = -1;
+    }
+  });
+});
