@@ -1895,6 +1895,11 @@ a:focus {
   outline: 2px solid #1D4F91;
 }
 
+picture {
+  display: flex;
+  justify-content: center;
+}
+
 /* Header styles */
 
 /* .wp-block-image .alignfull .size-large {
